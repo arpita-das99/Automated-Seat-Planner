@@ -12,8 +12,6 @@ class TestConfig(Config):
 
 @pytest.fixture
 def client(monkeypatch):
-    # Patch init_db so create_app() wires up a mongomock database instead of
-    # a real MongoClient connection.
     fake_client = mongomock.MongoClient()
     fake_db = fake_client["seat_planner_test"]
 

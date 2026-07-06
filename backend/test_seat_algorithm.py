@@ -67,8 +67,6 @@ def test_three_course_full_room_conflicts_bounded():
     lower_bound = theoretical_lower_bound(course_counts, rows, cols)
 
     assert result.unplaced == []
-    # The roll-order constraint can push conflicts above the
-    # free-reordering lower bound, but not wildly above it.
     assert result.conflicts >= 0
     assert result.conflicts <= lower_bound + 6
 
